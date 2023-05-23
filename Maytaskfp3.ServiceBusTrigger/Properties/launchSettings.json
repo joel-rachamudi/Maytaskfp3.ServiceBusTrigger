@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Maytaskfp3.ServiceBusTrigger": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7194",
+      "launchBrowser": false
+    }
+  }
+}
