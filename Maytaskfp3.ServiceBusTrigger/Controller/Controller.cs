@@ -9,9 +9,9 @@ using Microsoft.Azure.WebJobs.Host;
 using System.Text.Json;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Maytaskfp3.ServiceBusTrigger.DTO;
 
-
-namespace Maytaskfp3.ServiceBusTrigger
+namespace Maytaskfp3.ServiceBusTrigger.Controller
 {
     public class Controller
     {
@@ -19,12 +19,12 @@ namespace Maytaskfp3.ServiceBusTrigger
         public class Function1
 
         {
-            protected virtual HttpClient Client{ get; set; }
+            protected virtual HttpClient Client { get; set; }
 
             //private virtual HttpClient client { get; set; };
             public Function1(IHttpClientFactory httpClientFactory)
             {
-                Client= httpClientFactory.CreateClient("HttpClient");
+                Client = httpClientFactory.CreateClient("HttpClient");
             }
 
 
@@ -47,14 +47,14 @@ namespace Maytaskfp3.ServiceBusTrigger
                 if (myQueueItem != null)
                 {
 
-                    
+
                     string baseUrl = Environment.GetEnvironmentVariable("Endpoint");
                     // Create a request object and set the HTTP method
                     HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, baseUrl);
 
                     // Set the body content
                     string jsonBody = orbjson;
-                    request.Content = new StringContent(jsonBody, System.Text.Encoding.UTF8, "application/json");
+                    request.Content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
 
                     try

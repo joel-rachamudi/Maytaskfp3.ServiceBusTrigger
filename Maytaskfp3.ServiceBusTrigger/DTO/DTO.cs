@@ -6,15 +6,13 @@ using System.Text.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-
-
-namespace Maytaskfp3.ServiceBusTrigger
+namespace Maytaskfp3.ServiceBusTrigger.DTO
 {
     public class Qmodel
     {
         public string message { get; set; }
     }
- }
-    
+}
+
 
 

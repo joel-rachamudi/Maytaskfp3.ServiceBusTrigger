@@ -8,10 +8,11 @@ using System.Net.Http;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Maytaskfp3.ServiceBusTrigger.Startup;
 
-[assembly: FunctionsStartup(typeof(Maytaskfp3.ServiceBusTrigger.Startup))]
+[assembly: FunctionsStartup(typeof(Startup))]
 
-namespace Maytaskfp3.ServiceBusTrigger
+namespace Maytaskfp3.ServiceBusTrigger.Startup
 {
     public class Startup : FunctionsStartup
     {
